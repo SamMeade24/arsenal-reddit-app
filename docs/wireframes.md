@@ -18,10 +18,9 @@ These wireframes will help me to define the structure, flow, and key user intera
 - Basic metadata per post (author, time, score)
 - Clear CTA to view comments
 
-**Wireframe:**
+**Wireframe:**: 
 ![Desktop Main Feed Page Wireframe](images/desktop-main-feed-page.jpeg)
 ![Mobile Main Feed & Post Detail Page Wireframe](images/mobile-homepage-post-page.jpeg)
-
 
 ### Post Comments View
 **Purpose:** Allows users to explore meaningful discussions. 
