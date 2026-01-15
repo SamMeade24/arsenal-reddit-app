@@ -19,8 +19,8 @@ These wireframes will help me to define the structure, flow, and key user intera
 - Clear CTA to view comments
 
 **Wireframe:**: 
-![Desktop Main Feed Page Wireframe](./wireframes/images/desktop-main-feed-page.jpeg)
-![Mobile Main Feed & Post Detail Page Wireframe](images/mobile-homepage-post-page.jpeg)
+![Desktop Main Feed Page Wireframe](./images/desktop-main-feed-page.jpeg)
+![Mobile Main Feed & Post Detail Page Wireframe](./images/mobile-homepage-post-page.jpeg)
 
 ### Post Comments View
 **Purpose:** Allows users to explore meaningful discussions. 
@@ -33,7 +33,7 @@ These wireframes will help me to define the structure, flow, and key user intera
 - Loading and error states
 
 **Wireframe:**
-![Desktop Post Detail Page Wireframe](images/desktop-post-detail-page.jpeg)
+![Desktop Post Detail Page Wireframe](./images/desktop-post-detail-page.jpeg)
 
 ### Error & Empty States
 It's important that the app is able to handle everything gracefully and provide a clean UX. 
@@ -45,8 +45,8 @@ It's important that the app is able to handle everything gracefully and provide 
 - Rate limit issues
 
 **Wireframe:**
-![Desktop Error State Page Wireframe](images/desktop-error-state.jpeg)
-![Desktop Loading State Page Wireframe](images/desktop-loading-state.jpeg)
+![Desktop Error State Page Wireframe](./images/desktop-error-state.jpeg)
+![Desktop Loading State Page Wireframe](./images/desktop-loading-state.jpeg)
 
 ---
 
