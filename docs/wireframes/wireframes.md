@@ -19,7 +19,7 @@ These wireframes will help me to define the structure, flow, and key user intera
 - Clear CTA to view comments
 
 **Wireframe:**: 
-![Desktop Main Feed Page Wireframe](images/desktop-main-feed-page.jpeg)
+![Desktop Main Feed Page Wireframe](./wireframes/images/desktop-main-feed-page.jpeg)
 ![Mobile Main Feed & Post Detail Page Wireframe](images/mobile-homepage-post-page.jpeg)
 
 ### Post Comments View
