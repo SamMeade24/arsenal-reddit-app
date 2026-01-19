@@ -1,9 +1,13 @@
 import React from "react";
 
-function Comment() {
+function Comment({ author, text, score }) {
     return (
-        <div>Single comment will go here</div>;
-    )
+        <div>
+            <p><strong>{author}</strong></p>
+            <p>{text}</p>
+            <p>▲ {score}</p>
+        </div>
+    );
 }
 
 export default Comment;

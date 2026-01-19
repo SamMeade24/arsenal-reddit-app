@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from "./components/Header";
 import PostsList from './components/PostsList';
+import CommentList from './components/CommentList';
 
 function App() {
   const dummyPosts = [
@@ -13,6 +14,7 @@ function App() {
     <div className="App">
       <Header />
       <PostsList posts={dummyPosts} />
+      <CommentList />
     </div>
   );
 }
