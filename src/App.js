@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from "./components/Header";
-import PostCard from './components/PostCard';
+import PostsList from './components/PostsList';
 
 function App() {
   const dummyPosts = [
@@ -12,14 +12,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {dummyPosts.map((post, index) => (
-        <PostCard 
-          key={index}
-          title={post.title}
-          author={post.author}
-          score={post.score}
-        />
-      ))}
+      <PostsList posts={dummyPosts} />
     </div>
   );
 }
