@@ -9,6 +9,7 @@ import LoadingSpinner from './components/LoadingSpinner';
 function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [selectedPostId, setSelectedPostId] = useState(null);
   
   const dummyPosts = [
     {id: 1, title: "Advantage Arsenal as they beat Chelsea 3-2", author: "Fabrizio Romano", score: 34}, 
@@ -36,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <PostsList posts={dummyPosts} />
+      <PostsList posts={dummyPosts} onPostSelect={setSelectedPostId} />
       <CommentList />
     </div>
   );

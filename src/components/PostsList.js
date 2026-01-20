@@ -1,7 +1,7 @@
 import React from "react";
 import PostCard from "./PostCard";
 
-function PostsList({ posts }) {
+function PostsList({ posts, onPostSelect }) {
     return (
         <div className="posts-list">
             {posts.map((post) => (
@@ -11,6 +11,7 @@ function PostsList({ posts }) {
                     title={post.title}
                     author={post.author}
                     score={post.score}
+                    onSelect={onPostSelect}
                 />
             ))}
         </div>
