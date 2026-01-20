@@ -7,6 +7,7 @@ function PostsList({ posts }) {
             {posts.map((post) => (
                 <PostCard 
                     key={post.id}
+                    id={post.id}
                     title={post.title}
                     author={post.author}
                     score={post.score}

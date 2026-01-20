@@ -1,6 +1,6 @@
 import React from "react";
 
-function PostCard({title, author, score}) {
+function PostCard({id, title, author, score}) {
     return (
         <div className="post-card">
             <h2>{title}</h2>
