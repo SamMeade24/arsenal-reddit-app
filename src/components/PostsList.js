@@ -1,7 +1,7 @@
 import React from "react";
 import PostCard from "./PostCard";
 
-function PostsList({ posts, onPostSelect }) {
+function PostsList({ posts, onPostSelect, selectedPostId }) {
     return (
         <div className="posts-list">
             {posts.map((post) => (
@@ -12,6 +12,7 @@ function PostsList({ posts, onPostSelect }) {
                     author={post.author}
                     score={post.score}
                     onSelect={onPostSelect}
+                    isSelected={post.id === selectedPostId}
                 />
             ))}
         </div>

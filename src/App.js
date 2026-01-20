@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <PostsList posts={dummyPosts} onPostSelect={setSelectedPostId} />
+      <PostsList posts={dummyPosts} onPostSelect={setSelectedPostId} selectedPostId={selectedPostId} />
       {selectedPostId && <CommentList />}
     </div>
   );
