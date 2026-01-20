@@ -38,7 +38,7 @@ function App() {
     <div className="App">
       <Header />
       <PostsList posts={dummyPosts} onPostSelect={setSelectedPostId} />
-      <CommentList />
+      {selectedPostId && <CommentList />}
     </div>
   );
 }
