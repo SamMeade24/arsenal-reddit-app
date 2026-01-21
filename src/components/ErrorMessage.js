@@ -2,7 +2,7 @@ import React from "react";
 
 function ErrorMessage() {
     return (
-        <div>This is an Error Message</div>
+        <section>This is an Error Message</section>
     );
 }
 

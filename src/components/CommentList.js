@@ -16,7 +16,7 @@ function CommentList() {
     ];
     
     return (
-        <div>
+        <section>
             {dummyComments.map((comment, index) => (
                 <Comment 
                     key={index}
@@ -25,7 +25,7 @@ function CommentList() {
                     score={comment.score}
                 />
             ))}
-        </div>
+        </section>
     );
 }
 

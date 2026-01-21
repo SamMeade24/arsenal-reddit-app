@@ -3,7 +3,7 @@ import PostCard from "./PostCard";
 
 function PostsList({ posts, onPostSelect, selectedPostId }) {
     return (
-        <div className="posts-list">
+        <section>
             {posts.map((post) => (
                 <PostCard 
                     key={post.id}
@@ -15,7 +15,7 @@ function PostsList({ posts, onPostSelect, selectedPostId }) {
                     isSelected={post.id === selectedPostId}
                 />
             ))}
-        </div>
+        </section>
     );
 }
 
