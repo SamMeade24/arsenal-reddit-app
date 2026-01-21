@@ -1,7 +1,7 @@
 import React from "react";
 import Comment from "./Comment";
 
-function CommentList() {
+function CommentList( { selectedPostId }) {
     const dummyComments = [
         { 
             author: "Ronnie Mewes", 
@@ -17,6 +17,8 @@ function CommentList() {
     
     return (
         <section>
+            <p>Showing comments for post #{selectedPostId}</p>
+
             {dummyComments.map((comment, index) => (
                 <Comment 
                     key={index}

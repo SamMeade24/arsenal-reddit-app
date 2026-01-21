@@ -38,7 +38,7 @@ function App() {
     <main>
       <Header />
       <PostsList posts={dummyPosts} onPostSelect={setSelectedPostId} selectedPostId={selectedPostId} />
-      {selectedPostId && <CommentList />}
+      {selectedPostId && (<CommentList selectedPostId={selectedPostId} />)}
     </main>
   );
 }
