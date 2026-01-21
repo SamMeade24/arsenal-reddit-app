@@ -4,22 +4,28 @@ import Comment from "./Comment";
 function CommentList( { selectedPostId }) {
     const dummyComments = [
         { 
+            postId: 1,
             author: "Ronnie Mewes", 
             text: "Since Jan 2024, City have spent £500m on 11 players!", 
             score: 21
         }, 
         {
+            postId: 2, 
             author: "Mark Malavan", 
             text: "Funny how all of these City charges have silently fallen away!", 
             score: 14
         }
     ];
+
+    const commentsForPost = dummyComments.filter(
+        (comment) => comment.postId === selectedPostId
+    );
     
     return (
         <section>
             <p>Showing comments for post #{selectedPostId}</p>
 
-            {dummyComments.map((comment, index) => (
+            {commentsForPost.map((comment, index) => (
                 <Comment 
                     key={index}
                     author={comment.author}
