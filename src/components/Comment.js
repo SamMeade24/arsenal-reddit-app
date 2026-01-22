@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Comment({ author, text, score }) {
-    const [currentScore, setCurrentScore] = useState(score);
-
+function Comment({ author, text, score, onUpvote }) {
     return (
         <article>
             <p><strong>{author}</strong></p>
             <p>{text}</p>
 
-            <p>Score: {currentScore}</p>
+            <p>Score: {score}</p>
 
-            <button onClick={() => setCurrentScore(currentScore + 1)}>Upvote</button>
+            <button onClick={onUpvote}>Upvote</button>
         </article>
     );
 }
