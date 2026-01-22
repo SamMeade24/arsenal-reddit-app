@@ -2,7 +2,9 @@ import React from "react";
 
 function ErrorMessage() {
     return (
-        <section>This is an Error Message</section>
+        <section role="alert">
+            <h1>Something went wrong. Please try again.</h1>
+        </section>
     );
 }
 

@@ -2,7 +2,9 @@ import React from "react";
 
 function LoadingSpinner() {
     return (
-        <section>Loading Spinner will go here</section>
+        <section>
+            <p>Loading posts ...</p>
+            </section>
     );
 }
 
