@@ -39,7 +39,12 @@ function CommentList( { selectedPostId }) {
         setComments(prevComments =>
             prevComments.map(comment => 
                 comment.id === id
-                ? {...comment, score: comment.score -1 }
+                ? {
+                    ...comment,
+                    score: comment.score > 0
+                        ? comment.score - 1
+                        : 0
+                }
                 : comment
             )
         );
