@@ -35,6 +35,16 @@ function CommentList( { selectedPostId }) {
         );
     };
 
+    const handleDownvote = (id) => {
+        setComments(prevComments =>
+            prevComments.map(comment => 
+                comment.id === id
+                ? {...comment, score: comment.score -1 }
+                : comment
+            )
+        );
+    };
+
     const totalScore = commentsForPost.reduce(
         (total, comment) => total + comment.score, 
         0
@@ -52,6 +62,7 @@ function CommentList( { selectedPostId }) {
                     text={comment.text}
                     score={comment.score}
                     onUpvote={() => handleUpvote(comment.id)}
+                    onDownvote={() => handleDownvote(comment.id)}
                 />
             ))}
         </section>
