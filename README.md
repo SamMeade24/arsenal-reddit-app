@@ -147,7 +147,6 @@ This decision is documented intentionally, namely to demonstrate:
 
 1. Clone the repository:
 
-```bash
 git clone <https://github.com/SamMeade24/arsenal-reddit-app.git>
 
 2. Navigate into the project directory:
