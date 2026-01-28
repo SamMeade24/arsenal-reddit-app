@@ -1,7 +1,7 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import Comment from "./Comment";
-import { upvote, downvote } from "../features/commentsSlice";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import Comment from './Comment';
+import { upvote, downvote } from '../features/commentsSlice';
 
 function CommentList( { selectedPostId }) {
     const comments = useSelector(state => state.comments.items);

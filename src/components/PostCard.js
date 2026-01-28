@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function PostCard({id, title, author, score, onSelect, isSelected }) {
     return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function Comment({ author, text, score, onUpvote, onDownvote }) {
     return (

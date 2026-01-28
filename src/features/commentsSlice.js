@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialComments = [
     { id: 1, postId: 1, author: "Ronnie Mewes", text: "Since Jan 2024, City have spent £500m on 11 players!", score: 21 }, 

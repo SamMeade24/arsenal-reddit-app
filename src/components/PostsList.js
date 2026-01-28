@@ -1,5 +1,5 @@
-import React from "react";
-import PostCard from "./PostCard";
+import React from 'react';
+import PostCard from './PostCard';
 
 function PostsList({ posts, onPostSelect, selectedPostId }) {
     return (
