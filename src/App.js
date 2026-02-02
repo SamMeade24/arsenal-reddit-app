@@ -35,7 +35,7 @@ function App() {
     return (
       <>
         <Header />
-        <ErrorMessage />
+        <ErrorMessage message={postsError}/>
       </>
     );
   }

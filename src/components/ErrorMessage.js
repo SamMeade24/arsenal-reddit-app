@@ -1,9 +1,9 @@
 import React from 'react';
 
-function ErrorMessage() {
+function ErrorMessage( { message }) {
     return (
         <section role="alert">
-            <h1>Something went wrong. Please try again.</h1>
+            <h1>{message || 'Something went wrong. Please try again.'}</h1>
         </section>
     );
 }
