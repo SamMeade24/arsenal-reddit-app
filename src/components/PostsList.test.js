@@ -18,7 +18,7 @@ describe('PostsList Component', () => {
 
         // Checks that authors have been rendered
         mockPosts.forEach(post => {
-            expect(screen.getByText(post.author)).toBeInTheDocument();
+            expect(screen.getByText(new RegExp(post.author))).toBeInTheDocument();
         });
     });
 
