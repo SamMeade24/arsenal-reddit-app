@@ -1,187 +1,152 @@
 # Arsenal Reddit Comment Explorer
 
-## 1. Project Overview
+A Reddit-inspired content exploration app built with **React** and **Redux Toolkit**, developed as part of the **Codecademy Full-Stack Engineer Career Path**. 
 
-The Arsenal Reddit Comment Explorer App is a Reddit-Style content application built as part of the **Codecademy Full-Stack Engineer Career Path**. 
+The original project brief required building a Reddit client application using the Reddit API. During development, it became clear that the Reddit API endpoints required for the brief were no longer publicly accessible without authentication or paid access. Rather than abandon the project, I adapted my approach to ensure the **core learning objectives** of the brief were still fully met. 
 
-The goal of the project was to build a real-world React application using **React and Redux**, integrating external API data, managing global state, and deploying the application to the web. 
+This project therefore focuses on **state management, async data flow, UI state handling, testing, and deployment**, using a custom data source that mirrors real-world Reddit-style content. 
 
-This project intentionally reflects the realities of learning modern FE development:
-- The app was **initially built using local React state**
-- **Redux was added later**, requiring refactoring and debugging
-- The **Reddit API could not be used** due to access and rate-limit restrictions
-- A substitue API (**JSONPlaceholder**) was used instead and documented transparently
-
-The focus of the project is learning, problem-solving, and architectural understanding - not perfection. 
+🔗 **Live demo:** https://arsenal-reddit-app.netlify.app/
 
 ---
 
-## 2. Wireframes
-Here are the planned wireframes for the application:
+## 1. Project Goals
 
-### Main Feed
+The original Codecademy brief required:
 
-**Wireframe:**
-![Desktop Main Feed Page Wireframe](./docs/wireframes/images/desktop-main-feed-page.jpeg)
-![Mobile Main Feed & Post Detail Page Wireframe](./docs/wireframes/images/mobile-homepage-post-page.jpeg)
+- A React application using Redux for global state
+- Async data fecthing from an external source
+- Displaying a list of posts and their comments
+- Handling loading and error states
+- Writing unit and integration tests
+- Deploying the finished app
 
----
-
-### Post Comments View
-
-**Purpose:** Allows users to explore discussions related to a selected post. 
-
-**Key elements planned:**
-- Post title and context
-- Back to feed navigation
-- Comment thread display
-- Nested replies structure
-- Loading and error states
-
-**Wireframe:**
-![Desktop Post Detail Page Wireframe](./docs/wireframes/images/desktop-post-detail-page.jpeg)
+All of these goals were met, despite the Reddit API limitaion. 
 
 ---
 
-### Error & Empty States
+## 2. Adapted Approach
 
-Handling failure cases gracefully was a core design consideration. 
+Because the Reddit API couldn't be used reliably:
 
-**Planned scenarios:**
-- No internet or API unavailable
-- No posts returned
-- No comments returned
-- API rate-limit issues
+- The app was restructured to simulate a Reddit-style experience
+- Redux slices manage posts and comments as if they were fetched from an external API
+- Async thunks replicate real-world request lifecycles (`idle`, `loading`, `fulfilled`, `rejected`)
+- Error and loading states are fully implemented and tested
 
-**Wireframes:**
-![Desktop Error State Page Wireframe](./docs/wireframes/images/desktop-error-state.jpeg)
-![Desktop Loading State Page Wireframe](./docs/wireframes/images/desktop-loading-state.jpeg)
+This ensured the project still demonstrates the **intentended architectural and technical skills**, not just API wiring. 
 
 ---
 
-## 3. Technologies Used
+## 3. Tech Stack
 
-- React
-- Redux Toolkit
-- React Redux
-- JavaScript (ES6+)
-- HTML
-- CSS
-- JSONPlaceholder API
-- Git & GitHub
-- Netlify
+- **React**
+- **Redux Toolkit**
+- **React Hooks**
+- **CSS**
+- **Jest & React Testing Library**
+- **Cypress (E2E Testing)**
+- **Netlify**
 
----
+--- 
 
-## 4. Features Implemented
+## 4. Features
 
-- Fetches posts from an external API
-- Displays an initial list of posts on load
-- Allows users to select a post
-- Displays comments associated with the selected post
-- Comment upvote and downvote functionality using Redux
-- Global state management for posts and comments
-- Loading and error states handled in the UI
-- Modular,component-based architecture
+- View a feed of posts (unfortunately not Arsenal related, due to Reddit API limitation)
+- Select a post to view if it has any comments
+- Loading and error states handled gracefully
+- Clean, accessible UI
+- Fully responsive layout
+- Tested components and reducers
+- Production deployment with strong Lighthouse scores
 
 ---
 
-## 5. Redux Implementation
+## 5. Testing
 
-### Why Redux Was Added Later
+### Unit & Integration Tests
+- Component rendering tests
+- Redux slice logic tests
+- Error and loading state coverage
 
-The application was originally built using **local component state**. 
-
-As part of the project requirements, Redux was later introduced to better manage shared state and demonstrate understanding of global state architecture. 
-
-This required:
-- Creating Redux slices
-- Configuring the Redux store
-- Refactoring components to use `useSelector` and `useDispatch`
-- Debugging state shape and reducer wiring issues
-
-Whilst this process was challenging, it significantly improved my understanding of Redux in a real world scenario. 
+### E2E Tests (Cypress)
+- App load verification
+- Post selection flow
+- Comment rendering
 
 ---
 
-### Posts Slice
+## 6. Deployment
 
-- Uses `createAsyncThunk` to fetch posts
-- Manages `loading`, `success`, and `error` states
-- Stores posts in global state
+This app is deployed using **Netlify** with a production build from Create React App (Codecademy requirement). 
 
-### Comments Slice
-
-- Stores comments in Redux state
-- Handles upvote and downvote actions
-- Demonstrates immutable state updates via Redux Toolkit
+- CI build checks enabled
+- ESLint errors resolved for production builds
+- Optimised bundle output
 
 ---
 
-## 6. API Usage
+## 7. Performance & Accessibility
 
-### Intended API: Reddit
+Lighthouse audits were run on both desktop and mobile:
 
-The original intention was to integrate directly with the Reddit API. 
+### Desktop
+- **Performance:** 90
+- **Accessibility:** 100
+- **Best Practices:** 100
+- **SEO:** 100
 
-However:
-- Reddit API access was restricted
-- OAuth requirements
-- Rate limiting (Main reason)
-- Client-side usage limitations
+### Mobile
+- **Performance:** 100
+- **Accessibility:** 100
+- **Best Practices:** 100
+- **SEO:** 100
 
-All of the above made it impractical for a publicly deployed project. 
-
-### Actual API Used: JSONPlaceholder
-
-To keep the project deployable and functional, **JSONPlaceholder** was used as a substitute API. 
-
-This decision is documented intentionally, namely to demonstrate:
-- Awareness of real-world API limitations
-- Ability to adapt requirements
-- Honest reflection on implementation constraints
+These results reflect a strong focus on accessibility, semantic HTML, and efficient rendering. 
 
 ---
 
-## 7. Installation and Setup
+## 8. Project Structure
 
-1. Clone the repository:
+src/
+├── components/
+│ ├── CommentList.js
+│ ├── ErrorMessage.js
+│ ├── Header.js
+│ ├── LoadingSpinner.js
+│ ├── PostCard.js
+│ └── PostsList.js
+├── features/
+│ ├── postsSlice.js
+│ └── commentsSlice.js
+├── store.js
+├── App.js
+├── index.js
+└── App.css
 
-git clone <https://github.com/SamMeade24/arsenal-reddit-app.git>
+## 9. Key Learnings
 
-2. Navigate into the project directory:
+- Moving from tutorials to real application logic is very challenging
+- Redux state design matters more than expected
+- Error handling and UI states are as important as the right journey paths
+- Tooling (CI, ESLint, testing) becomes critical during deployment, something I overlooked. 
+- Adapting to real-world constraints is part of being a real-world developer!
 
-cd arsenal-reddit-app
+This project represents a genuine learning curve and reflects the realities of modern front-end development.
 
-3. Install dependencies:
+---
 
-npm install
+## 10. Possible Future Improvements
 
-4. Run the app locally:
+- Search and filter functionality (If Reddit restore the API again)
+- Detailed post view using routing or modals
+- Animataions and transitions
+- API-backed data source with authentication
+- Migration to Vite for smaller bundles
 
-npm start
+## Author
 
-5. Open in your browser:
-
-http://localhost:3000
-
-## 8. Deployment
-
-The application is deployed using Netlify, and can be accessed via (insert web address). 
-
-Deployment was prioritised after core functionality and Redux integration was complete. 
-
-## 9. Project Scope & Roadmap
-
-This project satisfies the core functional requirements of the Codecademy brief.
-
-The overall project scope includes:
-- Search functionality for posts
-- Filtering posts by predefined categories
-- A dedicated post detail route or modal
-- Responsive styling across devices
-- Animations and transitions
-- Unit and end-to-end testing
-- Performance and accessibility optimisation
-
-These items are intentionally documented as part of the project's planned scope and architectural design. 
+**Sam Meade**
+MadeByMeade
+Aspiring Full-Stack Developer
+Built as part of the Codecademy Full-Stack Engineer Path
